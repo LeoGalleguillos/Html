@@ -1,0 +1,13 @@
+{
+    "autoload": {
+        "psr-4": {
+            "LeoGalleguillos\\Html\\": "src/",
+            "LeoGalleguillos\\HtmlTest\\": "test/"
+        }
+    },
+    "license": "MIT",
+    "name": "leo-galleguillos/html",
+    "require": {
+        "zendframework/zend-test": "^3.1"
+    }
+}
