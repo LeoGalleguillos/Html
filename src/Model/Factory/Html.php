@@ -6,9 +6,21 @@ use LeoGalleguillos\Html\Model\Service as HtmlService;
 
 class Html
 {
+    public function __construct(
+        HtmlService\Html $htmlService
+    ) {
+        $this->htmlService = $htmlService;
+    }
+
     public function buildFromHtmlString(string $html) : HtmlEntity\Html
     {
         $htmlEntity = new HtmlEntity\Html();
         return $htmlEntity->setHtml($html);
+    }
+
+    public function buildFromUrl(string $url) : HtmlEntity\Html
+    {
+        $html = $this->htmlService->getHtmlFromUrl($url);
+        return $this->buildFromHtmlString($html);
     }
 }

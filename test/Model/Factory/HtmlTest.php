@@ -10,7 +10,12 @@ class HtmlTest extends TestCase
 {
     protected function setUp()
     {
-        $this->htmlFactory = new HtmlFactory\Html();
+        $this->htmlServiceMock = $this->createMock(
+            HtmlService\Html::class
+        );
+        $this->htmlFactory = new HtmlFactory\Html(
+            $this->htmlServiceMock
+        );
     }
 
     public function testInitialize()
@@ -21,7 +26,7 @@ class HtmlTest extends TestCase
         );
     }
 
-    public function testBuildHtmlString()
+    public function testBuildFromHtmlString()
     {
         $htmlString = '<html></html>';
         $htmlEntity = $this->htmlFactory->buildFromHtmlString($htmlString);
@@ -34,6 +39,21 @@ class HtmlTest extends TestCase
         $this->assertSame(
             $htmlEntity->getHtml(),
             $htmlString
+        );
+    }
+
+    public function testBuildFromUrl()
+    {
+        $url = 'https://www.sotosummarize.com/';
+        $htmlEntity = $this->htmlFactory->buildFromUrl($url);
+
+        $this->assertInstanceOf(
+            HtmlEntity\Html::class,
+            $htmlEntity
+        );
+
+        $this->assertTrue(
+            is_string($htmlEntity->getHtml())
         );
     }
 }

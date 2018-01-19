@@ -24,7 +24,9 @@ class HtmlTest extends TestCase
     public function testGetHtml()
     {
         $this->assertTrue(
-            is_string($this->htmlService->getHtml('https://www.sotosummarize.com/'))
+            is_string(
+                $this->htmlService->getHtmlFromUrl('https://www.sotosummarize.com/')
+            )
         );
     }
 }
