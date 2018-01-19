@@ -1,21 +1,23 @@
 <?php
 namespace LeoGalleguillos\Html\Model\Entity;
 
+use LeoGalleguillos\Html\Model\Entity as HtmlEntity;
+
 class Html
 {
     /**
      * @var string
      */
-    protected $html;
+    protected $string;
 
-    public function getHtml() : string
+    public function getString() : string
     {
-        return $this->html;
+        return $this->string;
     }
 
-    public function setHtml(string $html) : self
+    public function setString(string $string) : HtmlEntity\Html
     {
-        $this->html = $html;
+        $this->string = $string;
         return $this;
     }
 }

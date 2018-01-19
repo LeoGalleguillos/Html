@@ -37,7 +37,7 @@ class HtmlTest extends TestCase
         );
 
         $this->assertSame(
-            $htmlEntity->getHtml(),
+            $htmlEntity->getString(),
             $htmlString
         );
     }
@@ -53,7 +53,7 @@ class HtmlTest extends TestCase
         );
 
         $this->assertTrue(
-            is_string($htmlEntity->getHtml())
+            is_string($htmlEntity->getString())
         );
     }
 }

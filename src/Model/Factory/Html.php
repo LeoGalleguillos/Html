@@ -12,10 +12,10 @@ class Html
         $this->htmlService = $htmlService;
     }
 
-    public function buildFromHtmlString(string $html) : HtmlEntity\Html
+    public function buildFromHtmlString(string $string) : HtmlEntity\Html
     {
         $htmlEntity = new HtmlEntity\Html();
-        return $htmlEntity->setHtml($html);
+        return $htmlEntity->setString($string);
     }
 
     public function buildFromUrl(string $url) : HtmlEntity\Html

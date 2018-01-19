@@ -23,6 +23,6 @@ class HtmlTest extends TestCase
 
     public function testProperties()
     {
-        $this->assertObjectHasAttribute('html', $this->htmlEntity);
+        $this->assertObjectHasAttribute('string', $this->htmlEntity);
     }
 }

@@ -10,7 +10,7 @@ class Title
     ) : HtmlEntity\Tag\Title {
         $title = new HtmlEntity\Tag\Title();
 
-        $htmlString = $html->getHtml();
+        $htmlString = $html->getString();
         preg_match('/<title>(.*)<\/title>/siU', $htmlString, $title_matches);
         $titleValue = trim($title_matches[1]);
         $title->setValue($titleValue);

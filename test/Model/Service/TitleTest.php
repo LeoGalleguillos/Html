@@ -24,7 +24,7 @@ class TitleTest extends TestCase
     public function testGetTitleFromHtml()
     {
         $html = new HtmlEntity\Html();
-        $html->setHtml(
+        $html->setString(
             file_get_contents(__DIR__ . '/../../Test.html')
         );
         $title = new HtmlEntity\Tag\Title();
