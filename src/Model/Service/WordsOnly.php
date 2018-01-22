@@ -4,14 +4,14 @@ namespace LeoGalleguillos\Html\Model\Service;
 use LeoGalleguillos\Html\Model\Entity as HtmlEntity;
 
 /**
- * Strip code.
+ * Words only.
  */
 class WordsOnly
 {
     /**
-     * Strip code.
+     * Get words only.
      *
-     * Removes code (HTML, CSS, and JavaScript) from a string.
+     * Removes code (removed HTML, CSS, and JavaScript) from a string.
      *
      * @param string $string
      * @return string
