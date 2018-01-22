@@ -26,6 +26,9 @@ class Module
                 HtmlService\Html::class => function ($serviceManager) {
                     return new HtmlService\Html();
                 },
+                HtmlService\Title::class => function ($serviceManager) {
+                    return new HtmlService\Title();
+                },
                 HtmlService\WordsOnly::class => function ($serviceManager) {
                     return new HtmlService\WordsOnly();
                 },
