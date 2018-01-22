@@ -19,9 +19,9 @@ class WordsOnly
     public function getWordsOnly(
         string $string
     ) : string {
-        $string = preg_replace('/<script.*?<\/script>/s', '', $string);
-        $string = preg_replace('/<style.*?<\/style>/s', '', $string);
-        $string = strip_tags($string);
+        $string = preg_replace('/<script.*?<\/script>/s', ' ', $string);
+        $string = preg_replace('/<style.*?<\/style>/s', ' ', $string);
+        $string = preg_replace('/<.*?>/s', ' ', $string);
         $string = html_entity_decode($string);
 
         $string = preg_replace('/[\pZ\pC]/u', ' ', $string);
